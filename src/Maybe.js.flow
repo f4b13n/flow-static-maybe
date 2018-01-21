@@ -1,0 +1,43 @@
+// @flow
+export opaque type Maybe<A> =
+  | null
+  | A
+
+type CaseOf<A, B> = {|
+  Nothing: () => B;
+  Just: (a: A) => B;
+|}
+
+declare export var nothing: () => Maybe<any>
+
+declare export var just: <A>(a: A) => Maybe<A>
+
+declare export var fromNullable: <A>(a: ?A) => Maybe<A>
+
+declare export var isNothing: (fa: Maybe<mixed>) => boolean
+
+declare export var isJust: (fa: Maybe<mixed>) => boolean
+
+declare export var map:
+  & (<A, B>(f: (a: A) => B, fa: Maybe<A>) => Maybe<B>)
+  & (<A, B>(f: (a: A) => B) => (fa: Maybe<A>) => Maybe<B>)
+
+declare export var ap:
+  & (<A, B>(fab: Maybe<(a: A) => B>, fa: Maybe<A>) => Maybe<B>)
+  & (<A, B>(fab: Maybe<(a: A) => B>) => (fa: Maybe<A>) => Maybe<B>)
+
+declare export var chain:
+  & (<A, B>(f: (a: A) => Maybe<B>, fa: Maybe<A>) => Maybe<B>)
+  & (<A, B>(f: (a: A) => Maybe<B>) => (fa: Maybe<A>) => Maybe<B>)
+
+declare export var fold:
+  & (<A, B>(cases: CaseOf<A, B>, fa: Maybe<A>) => B)
+  & (<A, B>(cases: CaseOf<A, B>) => (fa: Maybe<A>) => B)
+
+declare export var getOrElse:
+  & (<A>(a: A, fa: Maybe<A>) => A)
+  & (<A>(a: A) => (fa: Maybe<A>) => A)
+
+declare export var get: <A>(fa: Maybe<A>) => A
+
+declare export var all: <A>(arr: Maybe<A>[]) => Maybe<A[]>

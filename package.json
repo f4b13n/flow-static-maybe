@@ -2,7 +2,7 @@
   "name": "flow-static-maybe",
   "version": "1.0.0",
   "description": "Data model that represents an optional value.",
-  "main": "index.js",
+  "main": "src/Maybe.js",
   "repository": "https://github.com/f4b13n/flow-static-maybe.git",
   "author": "fb3rn4rd",
   "license": "MIT",

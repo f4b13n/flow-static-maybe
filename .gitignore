@@ -1,0 +1,22 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/flow-typed
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+
+# ide
+.vscode
+
+# misc
+.DS_Store
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+

@@ -1,0 +1,24 @@
+{
+  "name": "flow-static-maybe",
+  "version": "1.0.0",
+  "description": "Data model that represents an optional value.",
+  "main": "index.js",
+  "repository": "https://github.com/f4b13n/flow-static-maybe.git",
+  "author": "fb3rn4rd",
+  "license": "MIT",
+  "scripts": {
+    "flow": "flow",
+    "test": "yarn flow && tape -r babel-register test/*.spec.js | tap-spec"
+  },
+  "dependencies": {
+    "ramda": "^0.25.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-register": "^6.26.0",
+    "flow-bin": "^0.63.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0"
+  }
+}

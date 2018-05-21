@@ -10,15 +10,15 @@ opaque type Maybe<A> = null | A
 
 > Opaque type aliases are type aliases that do not allow access to their underlying type outside of the file in which they are defined.
 
-This guarantees that a value of the `Maybe` type can be created and manipulated only by using the provided functions.
+This guarantees that a value of `Maybe` type can be created and manipulated only by using the provided functions.
 
 ```js
 // @flow
 import type { Maybe } from 'flow-static-maybe'
 import { just, nothing } from 'flow-static-maybe'
 
-const a: Maybe<string> = null        // null This type is type is incompatible with Maybe
-const b: Maybe<string> = 'foo'       // string This type is type is incompatible with Maybe
+const a: Maybe<string> = null        // null This type is incompatible with Maybe
+const b: Maybe<string> = 'foo'       // string This type is incompatible with Maybe
 const c: Maybe<string> = just('foo') // yay !
 const d: Maybe<string> = nothing()   // yay !
 ```
